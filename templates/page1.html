@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Daily Nutrition{% endblock %}
+
+{% block content %}
+  <h>This is a daily nutrition report</h>
+  <form action="/next1" method="POST">
+  <button type="submit" class="btn btn-outline-success btn-lg">Next</button>
+  </form>
+  <form action="/home" method="POST">
+  <button type="submit" class="btn btn-outline-danger btn-lg">Home</button>
+  </form>
+{% endblock %}

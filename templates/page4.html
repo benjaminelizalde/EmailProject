@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Data Reporter{% endblock %}
+
+{% block content %}
+  <h>Meal 3</h>
+  <form action="/next2" method="POST">
+      <label for="comment">What did you have for dinner?:</label>
+      <textarea name='data' class="form-control" rows="5" id="comment"></textarea>
+      <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
+  </form>
+  <form action="/home" method="POST">
+  <button type="submit" class="btn btn-outline-danger btn-lg">Home</button>
+  </form>
+  
+{% endblock %}
