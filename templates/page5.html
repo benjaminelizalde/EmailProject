@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
-{% block title %}Daily Nutrition{% endblock %}
+{% block title %}Data Reporter{% endblock %}
 
 {% block content %}
-  <h>Meal 1</h>
-  <form action="/next2" method="POST">
-      <label for="comment">What did you have for breakfast:</label>
+  <h>Snacks</h>
+  <form action="/next5" method="POST">
+      <label for="comment">What did you have for snacks throughout the day?:</label>
       <textarea name='data' class="form-control" rows="5" id="comment"></textarea>
       <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
   </form>
