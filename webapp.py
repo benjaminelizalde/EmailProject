@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, session, request, jsonify, Markup
 from flask import render_template
 from flask_mail import Mail, Message
+from time import localtime, strftime
 
 import csv
 import pprint
@@ -22,7 +23,10 @@ mail=Mail(app)
 
 @app.route('/')
 def Page1():
+    
+    print(strftime("%a, %d %b %Y %H:%M:%S +0000", localtime()))
     return render_template('Page1.html')
+    
 
     
 @app.route('/page2')
@@ -78,7 +82,7 @@ def rendernext5():
 @app.route('/next6',methods=["POST","GET"])
 def rendernext6():
     
-    session["message5"] = request.form['data'] + ',' + request.form['data1']
+    session["message5"] = request.form['data'] + ',' + request.form['data1'] + ',' + strftime("%a, %d %b %Y %H:%M:%S +0000", localtime())
      
     messg = session['message1'] + ',' + session['message2'] + ',' + session['message3'] + ',' + session['message4'] + ',' + session['message5'] 
     msg = Message('User Dats', sender = 'codingbot@gmail.com', recipients = ['codingbot0@gmail.com'])
@@ -86,7 +90,8 @@ def rendernext6():
 
     mail.send(msg)
     
-    return render_template('Page7.html' , sent="msg5 sent")
+    return render_template('Page7.html' , sent= strftime("%a, %d %b %Y %H:%M:%S ", localtime()))
+    
 
 
 if __name__ == '__main__':
