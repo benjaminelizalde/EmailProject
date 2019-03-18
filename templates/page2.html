@@ -1,17 +1,50 @@
 {% extends "layout.html" %}
 
-{% block title %}Daily Nutrition{% endblock %}
+{% block title %}School Info{% endblock %}
 
 {% block content %}
-  
+  <h1> Math </h1>
   <form action="/next2" method="POST">
-  <label for="comment">What did you have for breakfast?:</label>
-      <textarea name='data' class="form-control" rows="5" id="comment"></textarea>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="Math I" >Math I
+    </label>
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="Math II" > Math II
+    </label>
+	<br>
+	    <label name= 'data' class="radio-inline">
+      <input type="radio" name="data" value="Math III" >Math III
+    </label> 
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="Math 2/3 cmp" >Math 2/3 cmp
+    </label>
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="Math 3/ Pre-Calc" >Math 3/ Pre-Calc cmp
+    </label>
+	<br>
+	<label class="radio-inline">
+      <input type="radio" name="data" value="Pre-Calc Python H" >Pre-Calc Python H
+    </label>
+	<br>
+	<label class="radio-inline">
+      <input type="radio" name="data" value="AP Calculus" >AP Calculus
+    </label>
+	<br>
+	<label class="radio-inline">
+      <input type="radio" name="data" value="AP Statistics" >AP Statistics
+    </label>
+	<br>
+	<br>
+	<br>
+	
   
   
   <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
   </form>
-  <form action="/home" method="POST">
+  <form action="/" method="POST">
   <button type="submit" class="btn btn-outline-danger btn-lg">Home</button>
   </form>
   

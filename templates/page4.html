@@ -1,15 +1,28 @@
 {% extends "layout.html" %}
 
-{% block title %}Daily Nutrition{% endblock %}
+{% block title %}School Info{% endblock %}
 
 {% block content %}
-  <h>Meal 3</h>
-  <form action="/next4" method="POST">
-      <label for="comment">What did you have for dinner?:</label>
-      <textarea name='data' class="form-control" rows="5" id="comment"></textarea>
+  <h1>History</h1>
+    <form action="/next4" method="POST">
+	
+	<label class="radio-inline">
+      <input type="radio" name="data" value="AP World" >AP World
+    </label>
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="APUSH" > APUSH
+    </label>
+	<br>
+	    <label name= 'data' class="radio-inline">
+      <input type="radio" name="data" value="Government" >Government/Econ
+    </label> 
+	<br>
+    
+    </label>
       <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
   </form>
-  <form action="/home" method="POST">
+  <form action="/" method="POST">
   <button type="submit" class="btn btn-outline-danger btn-lg">Home</button>
   </form>
   <p>{{sent}}</p>

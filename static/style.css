@@ -1,3 +1,13 @@
-.p{
-	text-align:center;
+p
+{
+	text-align: CENTER;
+}
+
+form{
+	text-align: CENTER;
+}
+
+h1
+{
+	text-align: CENTER;
 }

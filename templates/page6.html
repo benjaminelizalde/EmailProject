@@ -1,60 +1,25 @@
 {% extends "layout.html" %}
 
-{% block title %}Data Reporter{% endblock %}
+{% block title %}School Info{% endblock %}
 
 {% block content %}
-  <h>Feels</h>
+  <p> Weighted Academic GPA </p>
   <form action="/next6" method="POST">
 
-	        <label for="comment">Describe the best and worst part of your day?:</label>
-      <textarea name='data1' class="form-control" rows="5" id="comment"></textarea>
-	  
-	   
-    <label  class="radio-inline">
-      <input type="radio" name="data" value="1" checked>1
-    </label> 
-	<br>
-    <label class="radio-inline">
-      <input type="radio" name="data" value="2" >2
-    </label>
-	<br>
-    <label class="radio-inline">
-      <input type="radio" name="data" value="3" >3
-    </label>
-	<br>
-	    <label name= 'data' class="radio-inline">
-      <input type="radio" name="data" value="4" >4
-    </label> 
-	<br>
-    <label class="radio-inline">
-      <input type="radio" name="data" value="5" >5
-    </label>
-	<br>
-    <label class="radio-inline">
-      <input type="radio" name="data" value="6" >6
-    </label>
-	<br>
-	    <label  class="radio-inline">
-      <input type="radio" name="data" value="7" >7
-    </label> 
-	<br>
-    <label class="radio-inline">
-      <input type="radio" name="data" value="8" >8
-    </label>
-	<br>
-    <label class="radio-inline">
-      <input type="radio" name="data" value="9" >9
-    </label>
-	<br>
-	<label class="radio-inline">
-      <input type="radio" name="data" value="10" >10
-    </label>
-    <br>
-	<br>
-      <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
-	</form>
-  <form action="/home" method="POST">
+	<input type="textarea" placeholder="Enter" name ="data">
+	
+	 <p> Unweighted Academic GPA </p>
+  
+
+	<input type="textarea" placeholder="Enter" name ="data1">
+	
+	<button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
+  </form>
+  <form action="/" method="POST">
   <button type="submit" class="btn btn-outline-danger btn-lg">Home</button>
   </form>
+	  
+	   
+    
   
 {% endblock %}

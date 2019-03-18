@@ -1,15 +1,46 @@
 {% extends "layout.html" %}
 
-{% block title %}Data Reporter{% endblock %}
+{% block title %}School Info{% endblock %}
 
 {% block content %}
-  <h>Snacks</h>
+  <h1>Science</h1>
   <form action="/next5" method="POST">
-      <label for="comment">What did you have for snacks throughout the day?:</label>
-      <textarea name='data' class="form-control" rows="5" id="comment"></textarea>
-      <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
+      
+      <label class="radio-inline">
+      <input type="radio" name="data" value=" AP Physics" >AP Physics
+    </label>
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="Physics" > Physics
+    </label>
+	<br>
+	    <label name= 'data' class="radio-inline">
+      <input type="radio" name="data" value="AP Chemistry" >AP Chemistry
+    </label> 
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="Chemistry" >Chemistry
+    </label>
+	<br>
+    <label class="radio-inline">
+      <input type="radio" name="data" value="AP Biology" >AP Biology
+    </label>
+	<br>
+	<label class="radio-inline">
+      <input type="radio" name="data" value="Biology" >Biology
+    </label>
+	<br>
+	<label class="radio-inline">
+      <input type="radio" name="data" value="APES" >APES
+    </label>
+	<br>
+	<label class="radio-inline">
+      <input type="radio" name="data" value="Marine Biology" >Marine Biology
+    </label>
+	
+	  <button type="submit" value='Post' class="btn btn-outline-success btn-lg">Next</button>
   </form>
-  <form action="/home" method="POST">
+  <form action="/" method="POST">
   <button type="submit" class="btn btn-outline-danger btn-lg">Home</button>
   </form>
   
