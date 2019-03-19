@@ -24,7 +24,7 @@ mail=Mail(app)
 @app.route('/')
 def Page1():
     
-    print(strftime("%a, %d %b %Y %H:%M:%S +0000", localtime()))
+    print(strftime("%a %d %b %Y %H:%M:%S", localtime()))
     return render_template('Page1.html')
     
 
@@ -50,7 +50,7 @@ def rendernext2():
     
     session["message1"] = request.form['data']
     
-    return render_template('Page3.html' , sent="msg1 sent")
+    return render_template('Page3.html' )
     
 
 @app.route('/next3',methods=["POST","GET"])
@@ -59,7 +59,7 @@ def rendernext3():
     session["message2"] = request.form['data']
     
     
-    return render_template('Page4.html' , sent="msg2 sent")
+    return render_template('Page4.html' )
     
 
 @app.route('/next4',methods=["POST","GET"])
@@ -67,7 +67,7 @@ def rendernext4():
     
     session["message3"] = request.form['data']
     
-    return render_template('Page5.html' , sent="msg3 sent")
+    return render_template('Page5.html' ,msg3=session["message3"])
     
 
 @app.route('/next5',methods=["POST","GET"])
@@ -76,21 +76,21 @@ def rendernext5():
    session["message4"] = request.form['data']
 
     
-   return render_template('Page6.html' , sent="msg4 sent")
+   return render_template('Page6.html' ,msg4= session["message4"])
     
     
 @app.route('/next6',methods=["POST","GET"])
 def rendernext6():
     
-    session["message5"] = request.form['data'] + ',' + request.form['data1'] + ',' + strftime("%a, %d %b %Y %H:%M:%S +0000", localtime())
-     
+    session["message5"] = request.form['data'] + ',' + request.form['data1'] + ',' + request.form['data2'] + ',' + strftime("%a %d %b %Y %H:%M:%S", localtime())
+    
     messg = session['message1'] + ',' + session['message2'] + ',' + session['message3'] + ',' + session['message4'] + ',' + session['message5'] 
     msg = Message('User Dats', sender = 'codingbot@gmail.com', recipients = ['codingbot0@gmail.com'])
     msg.attach("data.csv", "data/csv" , messg )
 
     mail.send(msg)
     
-    return render_template('Page7.html' , sent= strftime("%a, %d %b %Y %H:%M:%S ", localtime()))
+    return render_template('Page7.html' , msg1=session["message1"], msg2= session["message2"],  msg3= session["message3"],  msg4= session["message4"],  time=strftime("%a, %d %b %Y %H:%M:%S ",localtime()))
     
 
 

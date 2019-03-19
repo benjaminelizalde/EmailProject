@@ -5,6 +5,46 @@
 {% block content %}
 
 <p>You have made it to the end your application has been sent </p>
-  <p> {{sent}} </p>
+  <p> {{time}} </p>
+  
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course Requested</th>
+	  <th scope="col">Class Code</th>
+     
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{msg1}}</td>
+	  <td>{{id}}</td>
+	  
+     
+     
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>{{msg2}}</td>
+     
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>{{msg3}}</td>
+     
+     
+    </tr>
+	<tr>
+      <th scope="row">4</th>
+      <td>{{msg4}}</td>
+     
+     
+    </tr>
+  </tbody>
+</table>
   
 {% endblock %}
